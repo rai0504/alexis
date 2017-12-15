@@ -1,0 +1,62 @@
+Layer 1 (spineRig1)
+Nathan Vegdahl's Torso Rig with no pivot slide.
+Pros:
+    1 Independent pelvis rotation and twist
+    2 Independent spine bend from lumbar spine base 
+      - natural pivot point
+    3 No implicit translation
+Cons:
+    1 Cannot change pivot.
+    2 Cannot alter curvature of spine.
+    3 Rotation of spine base rotates the hips in the
+      opposite direction by an equal amount.
+---------------------------------------------------
+Layer 2 (spineRig2)
+Nathan Vegdahl's Torso with Pivot Slide/Reverse Chain Rig.
+Intended to be combined with SpineRig1.
+Pros:
+    1 Independent pelvis rotation and twist
+    2 Independent spine bend from lumbar spine base 
+      - natural pivot point
+    3 No implicit translation
+    4 Pivot point can be changed to be anywhere along
+      length of the spine+hips
+Cons:
+    1 Cannot alter curvature of spine without moving the
+      of the child bone (counter-animation issue)
+    2 Cannot isolate hip rotation
+---------------------------------------------------
+Layer 3 (spineRig3)
+Nathan Vegdahl's complete humanoid bipedal spine rig.
+Combination of the previous two rigs.
+Pros:
+    1 Visually indicate spine pivot as body bone.
+Cons:
+    1 Cannot un-isolate spine from the hips.
+---------------------------------------------------
+Layer 4 (spineRig4)
+Lee Slavemini's complete humanois bipeddal spine rig. An
+extension from Nathan Veghdahl's complete humanoid spine
+rig.
+Pros:
+    1 Switchable parent between spine and pelvis.
+Cons:
+    1 No visual indicator or spine pivot.
+    2 One bone used for thoracic spine, therefore unable
+      to get some spine curvatures that invlove deforming
+      only the thoracic spine.
+---------------------------------------------------
+Layer 5 (spineRig5)
+Cartoony spline ik rig.
+Cons:
+    1 Often gets stuck.
+    2 Does not update in real time
+    3 Probably needs a separate control rig
+---------------------------------------------------
+Layer 6 (spineRig 6 & spine6Control)
+Cartoony spline ik rig.
+Cons:
+    1 Unstable, glitchy
+    2 Unintuitive controls. Scale affects something else.
+    3 Needs more than one rig
+    4 Twist deformation is unreliable.
