@@ -47,6 +47,12 @@ class RigUI(bpy.types.Panel):
         torso_group = [chest, spine, hips, body]
         if isSelected(torso_group):
             layout.prop(pose_bones["body"], '["pivot"]', slider=True)
+            
+        # eye
+        eye = "eye.target"
+        eye_group = [eye]
+        if isSelected(eye_group):
+            layout.prop(pose_bones["eye.target"], '["follow head"]', slider=True)
         
         # left arm    
         shoulderl = "shoulder.L"
@@ -196,7 +202,7 @@ class RigUI(bpy.types.Panel):
         pinkyr_group = [pinkyfkr, pinky2fkr, pinky3fkr, pinkyikr]
         if isSelected(pinkyr_group):
             layout.prop(pose_bones["finger.pinky.ik.R"], '["pinky.R fk_ik"]', slider=True)
-        
+          
         
 ### Rig Layers
 class RigLayers(bpy.types.Panel):
@@ -226,16 +232,16 @@ class RigLayers(bpy.types.Panel):
         row = col.row()
         row.prop(context.active_object.data, 'layers', index=2, toggle=True, text='fk arm.l')
         col2 = row.column()
-        col2.prop(context.active_object.data, 'layers', index=3, toggle=True, text='fk>ik')
-        col2.prop(context.active_object.data, 'layers', index=2, toggle=True, text='ik>fk')
+        #col2.prop(context.active_object.data, 'layers', index=3, toggle=True, text='fk>ik')
+        #col2.prop(context.active_object.data, 'layers', index=2, toggle=True, text='ik>fk')
         row.prop(context.active_object.data, 'layers', index=3, toggle=True, text='ik arm.l')
                 
         # right arm
         row = col.row()
         row.prop(context.active_object.data, 'layers', index=18, toggle=True, text='fk arm.r')
         col2 = row.column()
-        col2.prop(context.active_object.data, 'layers', index=19, toggle=True, text='fk>ik')
-        col2.prop(context.active_object.data, 'layers', index=18, toggle=True, text='ik>fk')
+        #col2.prop(context.active_object.data, 'layers', index=19, toggle=True, text='fk>ik')
+        #col2.prop(context.active_object.data, 'layers', index=18, toggle=True, text='ik>fk')
         row.prop(context.active_object.data, 'layers', index=19, toggle=True, text='ik arm.r')
         
         # fingers
@@ -247,17 +253,22 @@ class RigLayers(bpy.types.Panel):
         row = col.row()
         row.prop(context.active_object.data, 'layers', index=5, toggle=True, text='fk leg.l')
         col2 = row.column()
-        col2.prop(context.active_object.data, 'layers', index=6, toggle=True, text='fk>ik')
-        col2.prop(context.active_object.data, 'layers', index=5, toggle=True, text='ik>fk')
+        #col2.prop(context.active_object.data, 'layers', index=6, toggle=True, text='fk>ik')
+        #col2.prop(context.active_object.data, 'layers', index=5, toggle=True, text='ik>fk')
         row.prop(context.active_object.data, 'layers', index=6, toggle=True, text='ik leg.l')
         
         # right leg
         row = col.row()
         row.prop(context.active_object.data, 'layers', index=21, toggle=True, text='fk leg.r')
         col2 = row.column()
-        col2.prop(context.active_object.data, 'layers', index=22, toggle=True, text='fk>ik')
-        col2.prop(context.active_object.data, 'layers', index=21, toggle=True, text='ik>fk')
+        #col2.prop(context.active_object.data, 'layers', index=22, toggle=True, text='fk>ik')
+        #col2.prop(context.active_object.data, 'layers', index=21, toggle=True, text='ik>fk')
         row.prop(context.active_object.data, 'layers', index=22, toggle=True, text='ik leg.r')
+        
+        # accessories
+        row = col.row()
+        row.prop(context.active_object.data, 'layers', index=8, toggle=True, text='accessories')
+        col2 = row.column()
         
         # root
         row = col.row()
